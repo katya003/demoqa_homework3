@@ -23,13 +23,12 @@ public class PracticeFormTests {
 
     @Test
     void fillPracticeFormTest() {
-        System.setProperty("webdriver.chrome.driver", "E:\\chromedriver.exe");
         open("/automation-practice-form");
         $("#firstName").setValue("Kate");
         $("#lastName").setValue("Mar");
         $("#userEmail").setValue("kate@kate.ru");
         $("#genterWrapper").find(".custom-control-label").click();
-        $("#userNumber").setValue("89333333333");
+        $("#userNumber").setValue("8933333333");
         $("#dateOfBirthInput").sendKeys(Keys.CONTROL + "A");
         $("#dateOfBirthInput").sendKeys("03.03.1992");
         $("#dateOfBirthInput").pressEnter();
@@ -46,8 +45,8 @@ public class PracticeFormTests {
         $(".modal-content").shouldHave(text("Kate Mar"));
         $(".modal-content").shouldHave(text("kate@kate.ru"));
         $(".modal-content").shouldHave(text("Male"));
-        $(".modal-content").shouldHave(text("89333333333"));
-        $(".modal-content").shouldHave(text("03 Mar 1992"));
+        $(".modal-content").shouldHave(text("8933333333"));
+        $(".modal-content").shouldHave(text("03 March,1992"));
         $(".modal-content").shouldHave(text("History"));
         $(".modal-content").shouldHave(text("Sports"));
         $(".modal-content").shouldHave(text("test.jpg"));
