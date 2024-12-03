@@ -24,6 +24,8 @@ public class PracticeFormTests {
     @Test
     void fillPracticeFormTest() {
         open("/automation-practice-form");
+        executeJavaScript("$('#fixedban').remove()"); //удаление банеров рекламных со страницы
+        executeJavaScript("$('footer').remove()"); //удаление банеров рекламных со страницы
         $("#firstName").setValue("Kate");
         $("#lastName").setValue("Mar");
         $("#userEmail").setValue("kate@kate.ru");
